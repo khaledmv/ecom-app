@@ -7,7 +7,7 @@ export const ProductCard = ({product}) => {
 
     const { cartList, addToCart, removeFromCart } = useCart();
     const [inCart, setIncart] = useState(false);
-    const { id, name, overview, poster, image_local, price,best_seller, rating} = product;
+    const { id, name, overview,image_local, price,best_seller, rating} = product;
 
     useEffect(() => {
         
