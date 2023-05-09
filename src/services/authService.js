@@ -26,7 +26,7 @@ export async function register(authDetail){
         body: JSON.stringify(authDetail),
     };
 
-    const response = await fetch("${import.meta.env.VITE_API_HOST}/register", requestOptions );
+    const response = await fetch(`${import.meta.env.VITE_API_HOST}/register`, requestOptions );
     const data = await response.json();
     if(data.accessToken){
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
