@@ -3,8 +3,8 @@ export async function login(authDetail){
     const requestOptions = {
         method: "POST",
         headers: {"content-Type": "application/json"},
-        body: JSON.stringify(authDetail)
-    } 
+        body: JSON.stringify(authDetail),
+    };
 
     const response = await fetch("${import.meta.env.VITE_API_HOST}/login", requestOptions);
     const data = await response.json();
@@ -13,7 +13,7 @@ export async function login(authDetail){
     if(data.accessToken){
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
         sessionStorage.setItem("cbid", JSON.stringify(data.user.id));
-    }
+    };
 
     return data;
 }
@@ -23,15 +23,15 @@ export async function register(authDetail){
     const requestOptions = {
         method: "POST",
         headers: {"content-Type": "application/json"},
-        body: JSON.stringify(authDetail)
-    }
+        body: JSON.stringify(authDetail),
+    };
 
     const response = await fetch("${import.meta.env.VITE_API_HOST}/register", requestOptions );
     const data = await response.json();
     if(data.accessToken){
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
         sessionStorage.setItem("cbid", JSON.stringify(data.user.id));
-    }
+    };
 
     return data;
 }
