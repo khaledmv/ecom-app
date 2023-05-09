@@ -6,7 +6,7 @@ export async function login(authDetail){
         body: JSON.stringify(authDetail)
     };
 
-    const response = await fetch("${import.meta.env.VITE_API_HOST}/login", requestOptions); // eslint-disable-line
+    const response = await fetch(`${import.meta.env.VITE_API_HOST}/login`, requestOptions); 
     const data = await response.json();
  
     
