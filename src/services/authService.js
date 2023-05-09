@@ -3,10 +3,10 @@ export async function login(authDetail){
     const requestOptions = {
         method: "POST",
         headers: {"content-Type": "application/json"},
-        body: JSON.stringify(authDetail),
+        body: JSON.stringify(authDetail)
     };
 
-    const response = await fetch("${import.meta.env.VITE_API_HOST}/login", requestOptions);
+    const response = await fetch("${import.meta.env.VITE_API_HOST}/login", requestOptions); // eslint-disable-line
     const data = await response.json();
  
     
